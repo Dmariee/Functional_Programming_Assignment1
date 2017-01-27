@@ -21,7 +21,7 @@
 (define (sum-up-numbers-general L) ;Sum up all numbers in a list that are not in nested loops
   (cond
     ((null? L) 0) ; Is the list empty? [Return Value : 0]
-    ((list? (car L)) (+ (sum-up-numbers-general(car L))      (sum-up-numbers-general(cdr L))) )
+    ((list? (car L)) (+ (sum-up-numbers-general(car L))(sum-up-numbers-general(cdr L))))
     ((number? (car L)) (+ (car L) (sum-up-numbers-general (cdr L))))
     (else (sum-up-numbers-general (cdr L) ))
   )
