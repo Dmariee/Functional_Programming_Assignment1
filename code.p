@@ -10,7 +10,10 @@
 )
 
 (define (sum-up-numbers-simple L) ;Sum up all numbers in a list that are not in nested loops
-  (cond 
-    
+  (cond
+    ((null? L) #F)
+   ; (else #T)
+    ((number? (car L)) (car L))
+    (sum-up-numbers-simple (cdr L))
   )
 )
