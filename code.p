@@ -11,10 +11,10 @@
 
 (define (sum-up-numbers-simple L) ;Sum up all numbers in a list that are not in nested loops
   (cond
-    ((null? L) 0) ;Is list empty? [Return Value: 0]
-    ((list? (car L)) 0) ;Is it a nested list? [Return Value: 0]
-    (not(number? (car L)) 0) ;Is the element not a number? [Return Value: 0]
+    ((null? L) 0)
+    ((list? (car L)) 0)
     ((number? (car L)) (car L)) ;Is the element a number? [Return Value: the number it is]
-    (else (sum-up-numbers-simple (cdr L)))
+    ((not(null? (cdr L))) (+ sum-up-numbers-simple(cdr L) (sum-up-numbers-simple(car L)))) ;Is list empty? [Return Value: 0]
+    (else 0)
   )
 )
