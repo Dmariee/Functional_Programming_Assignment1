@@ -13,7 +13,8 @@
   (cond
     ((null? L) 0) ;Is list empty? [Return Value: 0]
     ((list? (car L)) 0) ;Is it a nested list? [Return Value: 0]
-    ((number? (car L)) (car L))
-    (sum-up-numbers-simple (cdr L) (list(sum-up-numbers-simple (car L))))
+    (not(number? (car L)) 0) ;Is the element not a number? [Return Value: 0]
+    ((number? (car L)) (car L)) ;Is the element a number? [Return Value: the number it is]
+    (else (sum-up-numbers-simple (cdr L)))
   )
 )
