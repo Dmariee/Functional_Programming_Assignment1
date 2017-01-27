@@ -43,7 +43,7 @@
 
 (define (get-values-greater-than L number) ; Deletes values that are smaller than number from the list
   (cond
-    ((null? L) #F) ;There are no numbers in the list
+    ((null? L) '()) ;There are no numbers in the list
     ((not(number? (car L))) (get-values-greater-than(cdr L) number))
     ((<= (car L) number) (get-values-greater-than(cdr L) number))
     (else (cons(car L) (get-values-greater-than(cdr L) number)))
