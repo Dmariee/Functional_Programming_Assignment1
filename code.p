@@ -32,7 +32,7 @@
     ((null? L) 0) ;If list is empty return 0
     ((null? (cdr L)) (car L)) ; Is there only one element in the list? Return that element
     ((<(car L) (car(cdr L))) (min-value-in-list(cons((car L) (cdr(cdr L)))))) ;Is the first element in the list smaller than the second element in the list?
-    else ((min-value-in-list(cdr L))))
+    (else ((min-value-in-list(cdr L)))))
 )
 
 (define (min-above-min L1 L2) ; Definition of min-above-min...L1 & L2 are simple lists
@@ -41,15 +41,6 @@
    ; (number? (car L2)
   
   (COND
-   ((null? L1) #F) ;If L1 is empty return false.
-   ((not(number? (car L2)))
-   ;((null? L2) (min-above-min(L1 L2)))
-   (>(car L1) (car L2)) ; 
-   ((NULL? lis1) (NULL? lis2))
-   ((NULL? lis2) #F)
-   ((equal (CAR lis1) (CAR lis2))
-   (equal (CDR lis1) (CDR lis2)))
-   (ELSE #F)
-  )  
-)
+   ((null? L1) #F) ;If L1 is empty return false.  
+))
     
