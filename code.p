@@ -26,3 +26,7 @@
     (else (sum-up-numbers-general (cdr L) )) ; Continue to the next element in the list since its not the end of the list
   )
 )
+
+(define (min-above-min L1 L2) ; Definition of min-above-min...L1 & L2 are simple lists
+  (cond ; Condiitional statement
+)
