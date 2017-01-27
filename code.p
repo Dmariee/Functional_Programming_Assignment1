@@ -1,3 +1,4 @@
+;---------------------------Question 1 ------------------------------
 (define (reverse-general L) ;Reverses the contents of a list including elements in nested lists
   (cond ;Conditional statement
     ((null? L) '()) ;Is list is empty? [Return Value: empty list] 
@@ -9,6 +10,7 @@
   ) 
 )
 
+;---------------------------Question 2 ------------------------------
 (define (sum-up-numbers-simple L) ;Sum up all numbers in a list that are not in nested loops
   (cond ; Conditional statement
     ((null? L) 0) ; Is the list empty? Return 0
@@ -18,6 +20,7 @@
   )
 )
 
+;---------------------------Question 3 ------------------------------
 (define (sum-up-numbers-general L) ;Sum up all numbers in a list
   (cond ; Conditional statement
     ((null? L) 0) ; Is the list empty? Have we come to the end of the list? Return 0
@@ -26,7 +29,8 @@
     (else (sum-up-numbers-general (cdr L) )) ; Continue to the next element in the list since its not the end of the list
   )
 )
- ;----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+;---------------------------Question 4 ------------------------------
 (define (min-value-in-list L) ; Finds the smallest value in a list
   (cond
     ((null? L) #F) ;If list is empty return false saying that there are no numbers in the list
@@ -49,8 +53,8 @@
 (define (min-above-min L1 L2) ; Definition of min-above-min...L1 & L2 are simple lists
   (cond ; Condiitional statement
     ((null? L1) #F) ; If L1 is empty the equation will equate to false
-    ((null? L2) min-value-in-list(L1)) ; If L2 is empty do the function for finding smallest over L1
-    ;((not(number? min-value-in-list(L2))) (min-value-in-list(L1)))
-    ;(else (min-value-in-list(get-values-greater-than(L1 (min-value-in-list(L2))))))
+    ((null? L2) (min-value-in-list(L1))) ; If L2 is empty do the function for finding smallest over L1
+    ((not(number? min-value-in-list(L2))) (min-value-in-list(L1))) ; L2 is F so find the smallest of L1
+    (else (min-value-in-list(get-values-greater-than(L1 (min-value-in-list(L2))))))
   )
 )
