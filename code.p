@@ -32,8 +32,13 @@
     ((null? L) 0) ;If list is empty return 0
     ((not(number? (car L))) (min-value-in-list(cdr L))) ; If element is not a number continue searching the list
     ((null? (cdr L)) (car L)) ; Is there only one element in the list? Return that element
+    ((not(number? (car(cdr L)))) (min-value-in-list(cons(car L) (cdr(cdr L)))))
     ((<(car L) (car(cdr L))) (min-value-in-list(cons(car L) (cdr(cdr L))))) ;Is the first element in the list smaller than the second element in the list?
     (else (min-value-in-list(cdr L))))
+)
+
+(define (get-values-greater-than L number) ; Deletes values that are smaller than number from the list
+
 )
 
 (define (min-above-min L1 L2) ; Definition of min-above-min...L1 & L2 are simple lists
