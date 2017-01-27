@@ -26,7 +26,7 @@
     (else (sum-up-numbers-general (cdr L) )) ; Continue to the next element in the list since its not the end of the list
   )
 )
-
+ ;----------------------------------------------------------------------------------------------------------------------------------------------------------------
 (define (min-value-in-list L) ; Finds the smallest value in a list
   (cond
     ((null? L) #F) ;If list is empty return false saying that there are no numbers in the list
@@ -48,7 +48,9 @@
 
 (define (min-above-min L1 L2) ; Definition of min-above-min...L1 & L2 are simple lists
   (cond ; Condiitional statement
-  ((null? L1) #F) ; If L1 is empty the equation will equate to false
-  ((not(number? (min-value-in-list(L2)))) (min-value-in-list(L1)))
+    ((null? L1) #F) ; If L1 is empty the equation will equate to false
+    ((null? L2) min-value-in-list(L1)) ; If L2 is empty do the function for finding smallest over L1
+    ;((not(number? min-value-in-list(L2))) (min-value-in-list(L1)))
+    ;(else (min-value-in-list(get-values-greater-than(L1 (min-value-in-list(L2))))))
   )
 )
