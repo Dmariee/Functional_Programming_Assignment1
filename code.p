@@ -29,7 +29,7 @@
 
 (define (min-value-in-list L) ; Finds the smallest value in a list
   (cond
-    ((null? L) 0) ;If list is empty return 0
+    ((null? L) #F) ;If list is empty return false saying that there are no numbers in the list
     ((not(number? (car L))) (min-value-in-list(cdr L))) ; If element is not a number continue searching the list
     ((null? (cdr L)) (car L)) ; Is there only one element in the list? Return that element
     ((not(number? (car(cdr L)))) (min-value-in-list(cons(car L) (cdr(cdr L)))))
@@ -38,7 +38,12 @@
 )
 
 (define (get-values-greater-than L number) ; Deletes values that are smaller than number from the list
-
+  (cond
+    ((null? L) #F) ;There are no numbers in the list
+    ((not(number? (car L))) (get-values-greater-than(cdr L) number))
+    ((< (car L) number) (get-values-greater-than(cdr L) number))
+    (else L)
+   )
 )
 
 (define (min-above-min L1 L2) ; Definition of min-above-min...L1 & L2 are simple lists
