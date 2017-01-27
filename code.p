@@ -53,8 +53,8 @@
 (define (min-above-min L1 L2) ; Definition of min-above-min...L1 & L2 are simple lists
   (cond ; Condiitional statement
     ((null? L1) #F) ; If L1 is empty the equation will equate to false
-    ((null? L2) (min-value-in-list(L1))) ; If L2 is empty do the function for finding smallest over L1
-    ((not(number? min-value-in-list(L2))) (min-value-in-list(L1))) ; L2 is F so find the smallest of L1
-    (else (min-value-in-list(get-values-greater-than(L1 (min-value-in-list(L2))))))
+    ((null? L2) '(min-value-in-list'(L1))) ; If L2 is empty do the function for finding smallest over L1
+    ((not(number? min-value-in-list(L2))) ('min-value-in-list'(L1))) ; L2 is F so find the smallest of L1
+    (else (min-value-in-list(get-values-greater-than(L1 (min-value-in-list'(L2))))))
   )
 )
