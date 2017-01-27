@@ -41,8 +41,8 @@
   (cond
     ((null? L) #F) ;There are no numbers in the list
     ((not(number? (car L))) (get-values-greater-than(cdr L) number))
-    ((< (car L) number) (get-values-greater-than(cdr L) number))
-    (else L)
+    ((<= (car L) number) (get-values-greater-than(cdr L) number))
+    (else (cons(car L) (get-values-greater-than(cdr L) number)))
    )
 )
 
