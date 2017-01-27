@@ -11,9 +11,9 @@
 
 (define (sum-up-numbers-simple L) ;Sum up all numbers in a list that are not in nested loops
   (cond
-    ((null? L) 0)
-    ((list? (card L) 0))
+    ((null? L) 0) ;Is list empty? [Return Value: 0]
+    ((list? (car L)) 0) ;Is it a nested list? [Return Value: 0]
     ((number? (car L)) (car L))
-    (sum-up-numbers-simple (cdr L))
+    (sum-up-numbers-simple (cdr L) (list(sum-up-numbers-simple (car L))))
   )
 )
