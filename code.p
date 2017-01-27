@@ -28,5 +28,17 @@
 )
 
 (define (min-above-min L1 L2) ; Definition of min-above-min...L1 & L2 are simple lists
-  (cond ; Condiitional statement
+  ;(cond ; Condiitional statement
+   ; ((null? L1) (null? L2)) ; If L1 is empty the equation will equate to false
+   ; (number? (car L2)
+  (COND
+   ((NOT (LIST? lis1))(<  lis1 lis2))
+   ((NOT (LIST? lis2)) #F)
+   ((NULL? lis1) (NULL? lis2))
+   ((NULL? lis2) #F)
+   ((equal (CAR lis1) (CAR lis2))
+   (equal (CDR lis1) (CDR lis2)))
+   (ELSE #F)
+  )  
 )
+    
