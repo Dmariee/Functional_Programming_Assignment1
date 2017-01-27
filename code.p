@@ -31,7 +31,7 @@
   (cond
     ((null? L) 0) ;If list is empty return 0
     ((null? (cdr L)) (car L)) ; Is there only one element in the list? Return that element
-    ((<(car L) (car(cdr L))) (min-value-in-list(cons((car L) (cdr(cdr L)))))) ;Is the first element in the list smaller than the second element in the list?
+    ((<(car L) (car(cdr L))) (min-value-in-list(cons((car L) (car(cdr L)))))) ;Is the first element in the list smaller than the second element in the list?
     (else ((min-value-in-list(cdr L)))))
 )
 
